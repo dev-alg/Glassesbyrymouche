@@ -115,6 +115,26 @@ img{max-width:100%;display:block}
 .admin-page{position:fixed;inset:0;z-index:120;background:#f4f6f9;overflow:auto;color:#1c1e21;padding-bottom:30px}.admin-page.hidden{display:none!important}.admin-cover{height:220px;background:linear-gradient(135deg,#d8758d,#9c3e5b);position:relative}.admin-profile-wrap{max-width:1100px;margin:-78px auto 0;padding:0 16px}.admin-profile{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden}.admin-identity{display:flex;align-items:flex-end;gap:18px;padding:0 22px 18px}.admin-avatar{width:150px;height:150px;border-radius:50%;border:5px solid #fff;background:linear-gradient(145deg,#fff,#f6d9df);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--deep);box-shadow:0 6px 20px rgba(0,0,0,.12);margin-top:-74px;flex:0 0 auto}.admin-title h1{margin:0;color:#1c1e21;font-size:28px}.admin-title p{margin:6px 0 0;color:#65676b;font-size:13px}.admin-profile-actions{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap}.admin-nav{display:flex;gap:6px;border-top:1px solid #eee;padding:8px 16px;overflow:auto}.admin-nav button{padding:11px 16px;border-radius:10px;color:#65676b;font-weight:700;white-space:nowrap}.admin-nav button.active{background:#fbe8ed;color:var(--deep)}.admin-content{max-width:1100px;margin:18px auto;padding:0 16px;display:grid;grid-template-columns:320px 1fr;gap:18px}.admin-side-card,.admin-main-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}.admin-side-card h3{margin:0 0 12px;color:#1c1e21}.admin-stat-list{display:grid;gap:10px}.admin-stat-list div{padding:12px;border-radius:12px;background:#f7f8fa}.admin-stat-list b{display:block;font-size:20px;color:var(--deep)}.admin-main-card{min-height:420px}.admin-page .admin-grid{grid-template-columns:repeat(4,1fr)}.admin-page .stat{box-shadow:none;background:#f8f9fb;border-color:#edf0f3}.admin-page .admin-tabs{display:none}@media(max-width:760px){.admin-cover{height:150px}.admin-profile-wrap{margin:-52px auto 0;padding:0}.admin-profile{border-radius:0}.admin-identity{align-items:center;flex-wrap:wrap;padding:0 14px 14px}.admin-avatar{width:108px;height:108px;font-size:28px;margin-top:-54px}.admin-title h1{font-size:23px}.admin-profile-actions{width:100%;margin-inline-start:0}.admin-profile-actions .btn{flex:1;padding-inline:12px}.admin-content{grid-template-columns:1fr;padding:0 10px;margin-top:10px}.admin-side-card{order:2}.admin-page .admin-grid{grid-template-columns:repeat(2,1fr)}}
 /* Improved bottom icons */
 .bottom-nav{box-shadow:0 -10px 30px rgba(80,40,55,.08);border-radius:22px 22px 0 0}.bottom-nav button{min-height:64px;transition:.2s;position:relative}.bottom-nav button svg{width:25px;height:25px;stroke-width:1.9}.bottom-nav button.active{color:var(--deep)}.bottom-nav button.active:before{content:"";position:absolute;top:5px;width:30px;height:4px;border-radius:999px;background:var(--rose2)}.bottom-nav .badge{right:-8px;top:-5px;min-width:18px;height:18px;font-size:9px;background:var(--rose2)}
+
+/* Customer order warning + image zoom */
+.order-warning-card{width:min(560px,100%);padding:28px 22px;text-align:center}
+.order-warning-icon{width:74px;height:74px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:#fff0f3;border:1px solid #e6a2b2;color:var(--deep);box-shadow:0 12px 30px rgba(156,62,91,.12)}
+.order-warning-icon svg{width:42px;height:42px;stroke:currentColor;fill:none;stroke-width:1.8}
+.order-warning-card h2{font-family:"Cormorant Garamond",serif;font-size:36px;color:var(--deep);margin:0 0 10px}
+.order-warning-card p{line-height:2;color:#604a52;font-size:14px;margin:0 auto 18px;max-width:470px}
+.order-warning-note{background:#fff0f3;border:1px solid #efd0d8;border-radius:16px;padding:13px 15px;color:#805765;font-size:12px;line-height:1.9;margin-bottom:18px}
+.order-warning-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.order-warning-actions .btn{min-width:160px}
+.order-send-error{display:none;margin:16px 0 0;padding:12px 14px;border-radius:14px;background:#fff3f4;border:1px solid #e7a5b2;color:#7d263e;font-size:12px;line-height:1.8;word-break:break-word}.order-send-error.show{display:block}
+.detail-main{cursor:zoom-in}
+.detail-main:focus{outline:3px solid rgba(201,95,121,.22)}
+.image-viewer{position:fixed;inset:0;z-index:160;background:rgba(24,15,20,.96);display:none;place-items:center;padding:18px;opacity:0;transition:.2s}
+.image-viewer.open{display:grid;opacity:1}
+.image-viewer img{width:min(96vw,1100px);height:min(88dvh,900px);object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.45))}
+.image-viewer button{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:32px;line-height:1}
+.image-viewer .zoom-hint{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom));color:#fff;font-size:12px;opacity:.75}
+@media(max-width:759px){.order-warning-card{padding:25px 18px}.order-warning-card h2{font-size:32px}.order-warning-card p{font-size:13px}.image-viewer{padding:10px}.image-viewer img{width:98vw;height:88dvh}}
+
 </style>
 
 <style id="background-color-8">
@@ -299,6 +319,29 @@ html, body,
   </div>
 </div>
 
+<div class="modal" id="orderWarningModal" aria-hidden="true">
+  <div class="modal-card order-warning-card">
+    <button class="modal-close" id="closeOrderWarning" aria-label="إغلاق">×</button>
+    <div class="order-warning-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5"/><path d="M12 17.5h.01"/></svg>
+    </div>
+    <h2>تنبيه قبل إرسال الطلب</h2>
+    <p>نود فقط إبلاغكم أن الأشخاص الذين يستهزؤون بعملنا ولن يستلموا طرودهم قد يقعون في مشاكل قانونية.</p>
+    <div class="order-warning-note">أي شخص يشتري بنية صادقة مرحبًا بك، نحن لا نعنيك بكلامنا.</div>
+    <div class="order-send-error" id="orderSendError" role="alert"></div>
+    <div class="order-warning-actions">
+      <button class="btn ghost" type="button" id="cancelOrderWarning">رجوع</button>
+      <button class="btn primary" type="button" id="finalConfirmOrder">تأكيد الطلب</button>
+    </div>
+  </div>
+</div>
+
+<div class="image-viewer" id="imageViewer" aria-hidden="true">
+  <button type="button" id="closeImageViewer" aria-label="إغلاق">×</button>
+  <img id="imageViewerImg" alt="تكبير صورة المنتج">
+  <div class="zoom-hint">اضغطي خارج الصورة للإغلاق</div>
+</div>
+
 <div class="modal" id="successModal">
   <div class="modal-card"><div class="success"><div class="check">✓</div><h2>تم استلام طلبك</h2><p>شكرًا لاختيارك BY Rymouche.<br>رقم طلبك: <strong id="successId">—</strong></p><a class="btn primary" id="successWhatsApp" target="_blank" rel="noopener">التواصل عبر WhatsApp</a></div></div>
 </div>
@@ -365,8 +408,10 @@ const shippingRates = {
 const wilayas = Object.keys(shippingRates);
 
 function headers(auth=true){
-  const h={apikey:SB.key,"Content-Type":"application/json"};
-  if(auth && accessToken) h.Authorization="Bearer "+accessToken;
+  /* Supabase REST works most reliably when every public request carries
+     both the apikey and an Authorization bearer token. For public requests
+     the publishable/anon key is used; after admin login the user token replaces it. */
+  const h={apikey:SB.key,"Content-Type":"application/json","Authorization":"Bearer "+((auth && accessToken)?accessToken:SB.key)};
   return h;
 }
 function money(n){return (Number(n)||0).toLocaleString("ar-DZ")+" دج"}
@@ -385,10 +430,20 @@ function normalizeProduct(p){
   };
 }
 async function sb(path, opts={}){
-  const res=await fetch(SB.url+path,{...opts,headers:{...headers(opts.auth!==false),...(opts.headers||{})}});
+  let res;
+  try{
+    res=await fetch(SB.url+path,{...opts,headers:{...headers(opts.auth!==false),...(opts.headers||{})}});
+  }catch(networkError){
+    throw new Error("NETWORK_ERROR: تعذر الوصول إلى Supabase. تحققي من اتصال الإنترنت ومن رابط المشروع: "+SB.url);
+  }
   const text=await res.text();
   let data=null; try{data=text?JSON.parse(text):null}catch(_){data=text}
-  if(!res.ok) throw new Error(typeof data==="string"?data:(data?.message||data?.error_description||"Supabase request failed"));
+  if(!res.ok){
+    const detail=typeof data==="string"?data:(data?.message||data?.error_description||data?.error||data?.msg||data?.hint||"");
+    const err=new Error(detail||("Supabase HTTP "+res.status));
+    err.status=res.status; err.payload=data;
+    throw err;
+  }
   return data;
 }
 
@@ -499,11 +554,20 @@ function renderProductDetail(){
   const p=currentProduct;if(!p)return;
   const main=p.images[selectedImage]||"";
   document.getElementById("productDetail").innerHTML=`<div>
-    <div class="detail-main">${main?`<img src="${escapeHtml(main)}" alt="${escapeHtml(p.name)}">`:"BY Rymouche"}</div>
+    <div class="detail-main" id="detailMainImage" role="button" tabindex="0" aria-label="تكبير صورة المنتج">${main?`<img src="${escapeHtml(main)}" alt="${escapeHtml(p.name)}">`:"BY Rymouche"}</div>
     <div class="thumbs">${p.images.map((src,i)=>`<button data-thumb="${i}"><img src="${escapeHtml(src)}" alt=""></button>`).join("")}</div>
   </div><div class="detail-copy"><div class="kicker">RYMOUCHE FRAME</div><h2>${escapeHtml(p.name)}</h2><div class="detail-price">${money(p.price)}</div><p>${escapeHtml(p.description||"إطار مختار بعناية ليكمل إطلالتك بلمسة راقية وعصرية.")}</p><p><strong>اللون:</strong> ${escapeHtml(p.color||"—")}<br><strong>التوفر:</strong> ${p.stock===0?"غير متوفر":"متوفر"}</p><div class="detail-actions"><button class="btn primary" id="detailAdd">أضف إلى السلة</button><button class="btn ghost" id="detailWish">${wishlist.includes(String(p.id))?"إزالة من المفضلة":"إضافة للمفضلة"}</button></div><div style="margin-top:14px"><a class="btn ghost" id="detailWhatsApp" target="_blank" rel="noopener">اسألينا عبر WhatsApp</a></div></div>`;
 }
 function closeProduct(){document.getElementById("productModal").classList.remove("open");document.getElementById("overlay").classList.remove("open")}
+function openImageViewer(){
+  const src=currentProduct?.images?.[selectedImage]||currentProduct?.images?.[0];
+  if(!src)return;
+  const viewer=document.getElementById("imageViewer");
+  document.getElementById("imageViewerImg").src=src;
+  viewer.classList.add("open");
+  viewer.setAttribute("aria-hidden","false");
+}
+function closeImageViewer(){const viewer=document.getElementById("imageViewer");viewer.classList.remove("open");viewer.setAttribute("aria-hidden","true");}
 
 /* =========================
    CHECKOUT
@@ -520,43 +584,176 @@ function openCheckout(){
   if(!cart.length){toast("السلة فارغة");return}
   closeCart();renderCheckoutSummary();document.getElementById("checkoutModal").classList.add("open");document.getElementById("overlay").classList.add("open");
 }
-async function submitOrder(e){
-  e.preventDefault(); if(!cart.length)return;
-  const btn=document.getElementById("confirmOrder");btn.disabled=true;btn.textContent="جاري إرسال الطلب...";
+function submitOrder(e){
+  e.preventDefault();
+  if(!cart.length)return;
+  const form=document.getElementById("checkoutForm");
+  if(!form.checkValidity()){form.reportValidity();return}
+  document.getElementById("orderSendError").textContent="";document.getElementById("orderSendError").classList.remove("show");
+  document.getElementById("orderWarningModal").classList.add("open");
+}
+
+function missingSchemaColumn(err, table){
+  const msg=String(err?.message||err?.details||err?.hint||"");
+  const re=new RegExp("Could not find the '([^']+)' column of '"+table+"'", "i");
+  const m=msg.match(re);
+  return m?m[1]:null;
+}
+
+async function postWithSchemaFallback(path, table, payload){
+  let data=Array.isArray(payload)?payload.map(x=>({...x})):{...payload};
+  const removed=[];
+  for(let attempt=0;attempt<12;attempt++){
+    try{
+      return await sb(path,{method:"POST",headers:{"Prefer":"return=representation"},auth:false,body:JSON.stringify(data)});
+    }catch(err){
+      const col=missingSchemaColumn(err,table);
+      if(!col) throw err;
+      removed.push(col);
+      if(Array.isArray(data)) data=data.map(row=>{const copy={...row};delete copy[col];return copy});
+      else { delete data[col]; }
+    }
+  }
+  throw new Error("تعذر مطابقة حقول جدول "+table+" مع قاعدة البيانات.");
+}
+
+async function sendOrder(){
+  if(!cart.length)return;
+
+  const submitBtn=document.getElementById("finalConfirmOrder");
+  const formSubmitBtn=document.getElementById("confirmOrder");
+
+  // منع الإرسال المزدوج وإظهار حالة الإرسال في الزرين إن وُجدا.
+  [submitBtn,formSubmitBtn].forEach(b=>{
+    if(b){
+      b.disabled=true;
+      if(b.id==="confirmOrder") b.textContent="جاري إرسال الطلب...";
+    }
+  });
+
   try{
     const wilaya=document.getElementById("cWilaya").value;
     const delivery=document.getElementById("cDelivery").value;
     const fee=shippingRates[wilaya]?.[delivery==="office"?1:0]||0;
+
     const order={
       customer_name:document.getElementById("cName").value.trim(),
       phone:document.getElementById("cPhone").value.trim(),
-      wilaya_name:wilaya, commune:document.getElementById("cCommune").value.trim(),
+      wilaya_name:wilaya,
+      commune:document.getElementById("cCommune").value.trim(),
       address:document.getElementById("cAddress").value.trim(),
-      delivery_type:delivery, notes:document.getElementById("cNotes").value.trim(),
-      products_total:subtotal(), delivery_price:fee, grand_total:subtotal()+fee, status:"new"
+      delivery_type:delivery,
+      notes:document.getElementById("cNotes").value.trim(),
+      products_total:Number(subtotal())||0,
+      delivery_price:Number(fee)||0,
+      grand_total:(Number(subtotal())||0)+(Number(fee)||0),
+      status:"new"
     };
-    const items=cart.map(x=>({product_id:x.id,product_name:x.name,unit_price:x.price,quantity:x.qty,total_price:x.price*x.qty}));
-    let result;
-    try{
-      result=await sb("/rest/v1/rpc/submit_public_order",{method:"POST",auth:false,body:JSON.stringify({p_order:order,p_items:items})});
-    }catch(rpcErr){
-      /* Adapter fallback for projects exposing orders/order_items directly. */
-      const created=await sb("/rest/v1/orders",{method:"POST",headers:{"Prefer":"return=representation"},auth:false,body:JSON.stringify(order)});
-      const row=Array.isArray(created)?created[0]:created;
-      if(row?.id) await sb("/rest/v1/order_items",{method:"POST",auth:false,body:JSON.stringify(items.map(i=>({...i,order_id:row.id})))});
-      result=row;
+
+    // product_id يجب أن يكون UUID صالحًا فقط. إذا كان معرف المنتج من نوع آخر
+    // نرسل null حتى لا يفشل تحويل PostgreSQL إلى uuid.
+    const uuidRe=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+    const items=cart.map(x=>{
+      const rawId=String(x.id??"").trim();
+      return {
+        product_id:uuidRe.test(rawId)?rawId:null,
+        product_name:String(x.name??""),
+        unit_price:Number(x.price)||0,
+        quantity:Math.max(1,parseInt(x.qty,10)||1),
+        total_price:(Number(x.price)||0)*Math.max(1,parseInt(x.qty,10)||1)
+      };
+    });
+
+    // نستخدم RPC فقط. النسخة السابقة كانت تلتقط أي خطأ في RPC ثم تحاول
+    // الإدخال المباشر في orders/order_items، وهذا قد يخفي سبب الخطأ الحقيقي
+    // أو يفشل بسبب RLS حتى لو كانت المشكلة الأصلية مختلفة.
+    const result=await sb(
+      "/rest/v1/rpc/submit_public_order",
+      {
+        method:"POST",
+        auth:false,
+        headers:{"Prefer":"return=representation"},
+        body:JSON.stringify({p_order:order,p_items:items})
+      }
+    );
+
+    const row=Array.isArray(result)?result[0]:result;
+    const orderId=row?.id || result?.id;
+
+    if(!orderId){
+      const err=new Error("تم تنفيذ دالة submit_public_order لكن لم تُرجع رقم الطلب.");
+      err.status=500;
+      err.payload=result;
+      throw err;
     }
-    const orderId=Array.isArray(result)?result[0]?.id:result?.id;
-    cart=[];saveCart();updateCounts();renderCart();
-    document.getElementById("checkoutModal").classList.remove("open");document.getElementById("overlay").classList.remove("open");
-    document.getElementById("successId").textContent=orderId||"RYM-"+Date.now().toString().slice(-6);
+
+    cart=[];
+    saveCart();
+    updateCounts();
+    renderCart();
+
+    document.getElementById("checkoutModal").classList.remove("open");
+    document.getElementById("orderWarningModal").classList.remove("open");
+    document.getElementById("overlay").classList.remove("open");
+
+    document.getElementById("successId").textContent=orderId;
+
     const phone=settings.whatsapp||"";
     const wa=document.getElementById("successWhatsApp");
-    wa.href=phone?"https://wa.me/"+String(phone).replace(/\D/g,"")+"?text="+encodeURIComponent("مرحبًا، أريد متابعة طلبي "+(orderId||"")):"#";
+    wa.href=phone
+      ?"https://wa.me/"+String(phone).replace(/\D/g,"")+"?text="+encodeURIComponent("مرحبًا، أريد متابعة طلبي "+orderId)
+      :"#";
     wa.classList.toggle("hidden",!phone);
+
     document.getElementById("successModal").classList.add("open");
-  }catch(err){toast("تعذر إرسال الطلب. يرجى المحاولة مرة أخرى.");console.error(err)}
-  finally{btn.disabled=false;btn.textContent="تأكيد الطلب"}
+
+  }catch(err){
+    console.error("Order submission error:",err);
+    console.error("Order submission payload:",err?.payload||null);
+
+    const box=document.getElementById("orderSendError");
+    const raw=err?.payload;
+    const msg=String(
+      err?.message ||
+      raw?.message ||
+      raw?.details ||
+      raw?.hint ||
+      raw?.error ||
+      "خطأ غير معروف"
+    );
+
+    let friendly="تعذر إرسال الطلب.";
+
+    if(/NETWORK_ERROR/i.test(msg)){
+      friendly="تعذر الاتصال بخادم Supabase. تحققي من الإنترنت ومن رابط المشروع.";
+    }else if(/function .*submit_public_order.* does not exist|could not find the function/i.test(msg)){
+      friendly="دالة submit_public_order غير موجودة أو لم يتم تحديث مخطط Supabase بعد إنشاء الدالة.";
+    }else if(/invalid input syntax for type uuid/i.test(msg)){
+      friendly="أحد معرفات المنتجات ليس UUID صالحًا. تم تعديل الصفحة لتجنب إرسال معرف غير صالح، وإذا استمر الخطأ فتحققي من دالة قاعدة البيانات.";
+    }else if(/row-level security|permission denied|not authorized|violates row-level security/i.test(msg)){
+      friendly="قاعدة البيانات رفضت العملية بسبب الصلاحيات أو RLS. تأكدي من أن submit_public_order هي SECURITY DEFINER وأن صلاحية EXECUTE ممنوحة لـ anon.";
+    }else if(/API key|apikey|JWT|Invalid API key|Unauthorized/i.test(msg) || err?.status===401){
+      friendly="مشكلة في مفتاح Supabase أو Authorization (HTTP "+(err?.status||401)+").";
+    }else if(err?.status===403){
+      friendly="تم رفض تنفيذ الدالة أو الوصول إلى قاعدة البيانات (HTTP 403). تحققي من GRANT EXECUTE وصلاحيات الدالة.";
+    }else if(err?.status===404){
+      friendly="مسار RPC غير موجود. تأكدي من اسم الدالة: public.submit_public_order(jsonb, jsonb).";
+    }else{
+      friendly+=" السبب: "+msg+(err?.status?" (HTTP "+err.status+")":"");
+    }
+
+    box.textContent=friendly;
+    box.classList.add("show");
+    toast("لم يتم إرسال الطلب — السبب ظاهر داخل النافذة");
+    throw err;
+
+  }finally{
+    if(formSubmitBtn){
+      formSubmitBtn.disabled=false;
+      formSubmitBtn.textContent="تأكيد الطلب";
+    }
+  }
 }
 
 /* =========================
@@ -579,10 +776,29 @@ async function openAccount(){
 function showAdmin(){document.getElementById("adminLogin").classList.add("hidden");document.getElementById("adminPanel").classList.remove("hidden");loadAdminOverview()}
 async function loginAdmin(e){
   e.preventDefault();
+  const email=document.getElementById("adminEmail").value.trim();
+  const password=document.getElementById("adminPassword").value;
   try{
-    const data=await sb("/auth/v1/token?grant_type=password",{auth:false,method:"POST",body:JSON.stringify({email:document.getElementById("adminEmail").value,password:document.getElementById("adminPassword").value})});
-    accessToken=data.access_token;sessionStorage.setItem("rymouche_access_token",accessToken);showAdmin();toast("تم تسجيل الدخول");
-  }catch(err){toast("بيانات الدخول غير صحيحة")}
+    const data=await sb("/auth/v1/token?grant_type=password",{
+      auth:false,
+      method:"POST",
+      body:JSON.stringify({email,password})
+    });
+    if(!data || !data.access_token) throw new Error("لم يتم استلام رمز الدخول من Supabase");
+    accessToken=data.access_token;
+    sessionStorage.setItem("rymouche_access_token",accessToken);
+    showAdmin();
+    toast("تم تسجيل الدخول بنجاح");
+  }catch(err){
+    console.error("Supabase admin login error:",err);
+    const msg=String(err?.message||"");
+    if(/Invalid login credentials/i.test(msg)) toast("Supabase رفض بيانات الدخول. تأكدي أن البريد وكلمة المرور مسجلان في Authentication > Users، وليس فقط في جدول داخل قاعدة البيانات.");
+    else if(/Email not confirmed/i.test(msg)) toast("البريد الإلكتروني غير مؤكد. أكدي البريد من Supabase ثم أعيدي المحاولة.");
+    else if(/NETWORK_ERROR/i.test(msg)) toast("تعذر الاتصال بالخادم. تأكدي من الإنترنت ومن أن رابط Supabase في الملف صحيح.");
+    else if(err?.status===401 || /API key|apikey|JWT/i.test(msg)) toast("مشكلة في مفتاح Supabase API. يجب مراجعة Project URL و Publishable/Anon Key داخل إعدادات المشروع.");
+    else if(err?.status===404) toast("رابط مشروع Supabase أو مسار المصادقة غير صحيح (404). راجعي Project URL.");
+    else toast("تعذر تسجيل الدخول"+(err?.status?" (HTTP "+err.status+")":"")+": "+(msg||"خطأ غير معروف"));
+  }
 }
 async function loadAdminOverview(){
   const sec=document.getElementById("adminOverview");
@@ -672,13 +888,14 @@ function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;",
 function escapeAttr(s){return escapeHtml(s)}
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove("show"),2200)}
 function observeReveals(){const els=document.querySelectorAll(".reveal:not(.in)");if(!("IntersectionObserver"in window)){els.forEach(x=>x.classList.add("in"));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});els.forEach(x=>io.observe(x))}
-function closeAll(){document.getElementById("overlay").classList.remove("open");document.getElementById("cartDrawer").classList.remove("open");document.getElementById("productModal").classList.remove("open");document.getElementById("checkoutModal").classList.remove("open");document.getElementById("adminModal").classList.add("hidden")}
+function closeAll(){document.getElementById("overlay").classList.remove("open");document.getElementById("cartDrawer").classList.remove("open");document.getElementById("productModal").classList.remove("open");document.getElementById("checkoutModal").classList.remove("open");document.getElementById("orderWarningModal").classList.remove("open");document.getElementById("imageViewer").classList.remove("open");document.getElementById("adminModal").classList.add("hidden")}
 document.addEventListener("click",e=>{
   const add=e.target.closest("[data-add]");if(add){const p=products.find(x=>String(x.id)===String(add.dataset.add));if(p)addToCart(p);return}
   const wish=e.target.closest("[data-wish]");if(wish){e.stopPropagation();toggleWish(wish.dataset.wish);return}
   const card=e.target.closest(".product");if(card && !e.target.closest("button")){openProduct(card.dataset.id);return}
   const q=e.target.closest("[data-q]");if(q){changeQty(q.dataset.q,Number(q.dataset.d));return}
   const rm=e.target.closest("[data-remove]");if(rm){cart=cart.filter(x=>String(x.id)!==String(rm.dataset.remove));saveCart();updateCounts();renderCart();return}
+  const detailImage=e.target.closest("#detailMainImage");if(detailImage){openImageViewer();return}
   const thumb=e.target.closest("[data-thumb]");if(thumb){selectedImage=Number(thumb.dataset.thumb);renderProductDetail();return}
   if(e.target.id==="detailAdd"){addToCart(currentProduct);return}
   if(e.target.id==="detailWish"){toggleWish(currentProduct.id);renderProductDetail();return}
@@ -690,13 +907,26 @@ document.getElementById("adminQuickRefresh").onclick=loadAdminOverview;document.
 document.getElementById("overlay").onclick=closeAll;
 document.getElementById("searchBtn").onclick=openSearch;document.getElementById("closeSearch").onclick=()=>document.getElementById("searchPanel").classList.remove("open");
 document.getElementById("searchInput").oninput=e=>doSearch(e.target.value);
-document.addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="TEXTAREA"){e.preventDefault();openSearch()}if(e.key==="Escape"){document.getElementById("searchPanel").classList.remove("open");closeAll()}});
+document.addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="TEXTAREA"){e.preventDefault();openSearch()}if(e.key==="Enter"&&document.activeElement?.id==="detailMainImage"){openImageViewer()}if(e.key==="Escape"){document.getElementById("searchPanel").classList.remove("open");closeImageViewer();closeAll()}});
 document.getElementById("wishBtn").onclick=openWishlist;
 document.querySelector('[data-bottom="#wishlist"]').onclick=openWishlist;
 document.getElementById("accountBtn").onclick=openAccount;
 document.getElementById("menuBtn").onclick=()=>toast("استخدمي شريط التنقل السفلي للتنقل السريع");
 document.getElementById("adminLoginForm").onsubmit=loginAdmin;
 document.getElementById("checkoutForm").onsubmit=submitOrder;
+document.getElementById("finalConfirmOrder").onclick=async()=>{
+  const btn=document.getElementById("finalConfirmOrder");
+  const errorBox=document.getElementById("orderSendError");
+  errorBox.textContent="";errorBox.classList.remove("show");
+  btn.disabled=true;btn.textContent="جاري إرسال الطلب...";
+  document.getElementById("cancelOrderWarning").disabled=true;
+  try{await sendOrder()}finally{btn.disabled=false;btn.textContent="تأكيد الطلب";document.getElementById("cancelOrderWarning").disabled=false}
+};
+const closeOrderWarning=()=>document.getElementById("orderWarningModal").classList.remove("open");
+document.getElementById("closeOrderWarning").onclick=closeOrderWarning;
+document.getElementById("cancelOrderWarning").onclick=closeOrderWarning;
+document.getElementById("closeImageViewer").onclick=closeImageViewer;
+document.getElementById("imageViewer").onclick=e=>{if(e.target===e.currentTarget)closeImageViewer()};
 document.getElementById("cWilaya").onchange=renderCheckoutSummary;
 document.getElementById("cDelivery").onchange=renderCheckoutSummary;
 document.getElementById("contactLink").onclick=()=>{const p=settings.whatsapp||"";if(p)window.open("https://wa.me/"+String(p).replace(/\D/g,""),"_blank");else toast("وسيلة التواصل قابلة للإضافة من الإعدادات")};
