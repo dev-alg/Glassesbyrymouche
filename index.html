@@ -573,7 +573,7 @@ function doSearch(q){
    ADMIN AUTH / CRUD / SETTINGS
 ========================= */
 async function openAccount(){
-  document.getElementById("adminModal").classList.add("open");document.getElementById("overlay").classList.add("open");
+  document.getElementById("adminModal").classList.remove("hidden");document.getElementById("overlay").classList.add("open");
   if(accessToken){try{await sb("/auth/v1/user");showAdmin()}catch(_){accessToken="";sessionStorage.removeItem("rymouche_access_token")}}
 }
 function showAdmin(){document.getElementById("adminLogin").classList.add("hidden");document.getElementById("adminPanel").classList.remove("hidden");loadAdminOverview()}
@@ -672,7 +672,7 @@ function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;",
 function escapeAttr(s){return escapeHtml(s)}
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove("show"),2200)}
 function observeReveals(){const els=document.querySelectorAll(".reveal:not(.in)");if(!("IntersectionObserver"in window)){els.forEach(x=>x.classList.add("in"));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});els.forEach(x=>io.observe(x))}
-function closeAll(){document.getElementById("overlay").classList.remove("open");document.getElementById("cartDrawer").classList.remove("open");document.getElementById("productModal").classList.remove("open");document.getElementById("checkoutModal").classList.remove("open");document.getElementById("adminModal").classList.remove("open")}
+function closeAll(){document.getElementById("overlay").classList.remove("open");document.getElementById("cartDrawer").classList.remove("open");document.getElementById("productModal").classList.remove("open");document.getElementById("checkoutModal").classList.remove("open");document.getElementById("adminModal").classList.add("hidden")}
 document.addEventListener("click",e=>{
   const add=e.target.closest("[data-add]");if(add){const p=products.find(x=>String(x.id)===String(add.dataset.add));if(p)addToCart(p);return}
   const wish=e.target.closest("[data-wish]");if(wish){e.stopPropagation();toggleWish(wish.dataset.wish);return}
