@@ -110,6 +110,11 @@ img{max-width:100%;display:block}
 @media(max-width:370px){.hero-glasses-wrap{height:125px;margin-top:18px}.hero-inner{padding-top:28px}.hero-title{font-size:48px}.hero-subtitle{font-size:17px;letter-spacing:6px}.products{gap:9px}.product-info{padding-inline:7px}.product-info h3{font-size:13px}.hero-inner{padding-inline:8px}.btn{padding-inline:20px}.brand .by{font-size:27px}.brand .ry{font-size:23px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.hero-glasses{animation:none}.hero-scroll:after{animation:none}.reveal{transition:none}}
+
+/* Full-page Facebook-style admin profile */
+.admin-page{position:fixed;inset:0;z-index:120;background:#f4f6f9;overflow:auto;color:#1c1e21;padding-bottom:30px}.admin-page.hidden{display:none!important}.admin-cover{height:220px;background:linear-gradient(135deg,#d8758d,#9c3e5b);position:relative}.admin-profile-wrap{max-width:1100px;margin:-78px auto 0;padding:0 16px}.admin-profile{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden}.admin-identity{display:flex;align-items:flex-end;gap:18px;padding:0 22px 18px}.admin-avatar{width:150px;height:150px;border-radius:50%;border:5px solid #fff;background:linear-gradient(145deg,#fff,#f6d9df);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--deep);box-shadow:0 6px 20px rgba(0,0,0,.12);margin-top:-74px;flex:0 0 auto}.admin-title h1{margin:0;color:#1c1e21;font-size:28px}.admin-title p{margin:6px 0 0;color:#65676b;font-size:13px}.admin-profile-actions{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap}.admin-nav{display:flex;gap:6px;border-top:1px solid #eee;padding:8px 16px;overflow:auto}.admin-nav button{padding:11px 16px;border-radius:10px;color:#65676b;font-weight:700;white-space:nowrap}.admin-nav button.active{background:#fbe8ed;color:var(--deep)}.admin-content{max-width:1100px;margin:18px auto;padding:0 16px;display:grid;grid-template-columns:320px 1fr;gap:18px}.admin-side-card,.admin-main-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}.admin-side-card h3{margin:0 0 12px;color:#1c1e21}.admin-stat-list{display:grid;gap:10px}.admin-stat-list div{padding:12px;border-radius:12px;background:#f7f8fa}.admin-stat-list b{display:block;font-size:20px;color:var(--deep)}.admin-main-card{min-height:420px}.admin-page .admin-grid{grid-template-columns:repeat(4,1fr)}.admin-page .stat{box-shadow:none;background:#f8f9fb;border-color:#edf0f3}.admin-page .admin-tabs{display:none}@media(max-width:760px){.admin-cover{height:150px}.admin-profile-wrap{margin:-52px auto 0;padding:0}.admin-profile{border-radius:0}.admin-identity{align-items:center;flex-wrap:wrap;padding:0 14px 14px}.admin-avatar{width:108px;height:108px;font-size:28px;margin-top:-54px}.admin-title h1{font-size:23px}.admin-profile-actions{width:100%;margin-inline-start:0}.admin-profile-actions .btn{flex:1;padding-inline:12px}.admin-content{grid-template-columns:1fr;padding:0 10px;margin-top:10px}.admin-side-card{order:2}.admin-page .admin-grid{grid-template-columns:repeat(2,1fr)}}
+/* Improved bottom icons */
+.bottom-nav{box-shadow:0 -10px 30px rgba(80,40,55,.08);border-radius:22px 22px 0 0}.bottom-nav button{min-height:64px;transition:.2s;position:relative}.bottom-nav button svg{width:25px;height:25px;stroke-width:1.9}.bottom-nav button.active{color:var(--deep)}.bottom-nav button.active:before{content:"";position:absolute;top:5px;width:30px;height:4px;border-radius:999px;background:var(--rose2)}.bottom-nav .badge{right:-8px;top:-5px;min-width:18px;height:18px;font-size:9px;background:var(--rose2)}
 </style>
 
 <style id="background-color-8">
@@ -303,25 +308,20 @@ html, body,
   <div class="search-results" id="searchResults"></div>
 </div>
 
-<div class="modal" id="adminModal">
-  <div class="admin-card">
-    <div class="admin-top"><h2>Rymouche Admin</h2><button class="icon-btn" data-close="admin">×</button></div>
-    <div id="adminLogin">
-      <p style="color:#806d73;font-size:12px">تسجيل الدخول محمي بواسطة Supabase Auth.</p>
-      <form id="adminLoginForm" class="checkout-form">
-        <div class="field"><label>Email</label><input id="adminEmail" type="email" required></div>
-        <div class="field"><label>Password</label><input id="adminPassword" type="password" required></div>
-        <button class="btn primary">تسجيل الدخول</button>
-      </form>
-    </div>
-    <div id="adminPanel" class="hidden">
-      <div class="admin-tabs"><button class="active" data-admin-tab="overview">Overview</button><button data-admin-tab="orders">Orders</button><button data-admin-tab="products">Products</button><button data-admin-tab="settings">Settings</button></div>
-      <section id="adminOverview"></section>
-      <section id="adminOrders" class="hidden"></section>
-      <section id="adminProducts" class="hidden"></section>
-      <section id="adminSettings" class="hidden"></section>
+<div class="admin-page hidden" id="adminModal">
+  <div class="admin-cover"></div>
+  <div class="admin-profile-wrap">
+    <div class="admin-profile">
+      <div class="admin-identity">
+        <div class="admin-avatar">BY<br><small style="font-size:11px;letter-spacing:2px">ADMIN</small></div>
+        <div class="admin-title"><h1>Rymouche Admin</h1><p>إدارة المتجر، الطلبات، المنتجات والإعدادات في صفحة واحدة</p></div>
+        <div class="admin-profile-actions"><button class="btn ghost" data-close="admin">إغلاق</button><button class="btn primary" id="adminQuickRefresh">تحديث البيانات</button></div>
+      </div>
+      <div class="admin-nav"><button class="active" data-admin-tab="overview">نظرة عامة</button><button data-admin-tab="orders">الطلبات</button><button data-admin-tab="products">المنتجات</button><button data-admin-tab="settings">الإعدادات</button></div>
     </div>
   </div>
+  <div id="adminLogin" class="admin-content"><div class="admin-main-card" style="max-width:520px;margin:auto;grid-column:1/-1"><h2 style="margin-top:0;color:var(--deep)">تسجيل الدخول للإدارة</h2><p style="color:#65676b;font-size:12px">تسجيل الدخول محمي بواسطة Supabase Auth.</p><form id="adminLoginForm" class="checkout-form"><div class="field"><label>Email</label><input id="adminEmail" type="email" required></div><div class="field"><label>Password</label><input id="adminPassword" type="password" required></div><button class="btn primary">تسجيل الدخول</button></form></div></div>
+  <div id="adminPanel" class="admin-content hidden"><aside class="admin-side-card"><h3>ملخص المتجر</h3><div class="admin-stat-list"><div><b id="sideOrders">—</b><span>إجمالي الطلبات</span></div><div><b id="sideProducts">—</b><span>المنتجات النشطة</span></div><div><b id="sideStatus">●</b><span>حالة الإدارة</span></div></div></aside><main class="admin-main-card"><section id="adminOverview"></section><section id="adminOrders" class="hidden"></section><section id="adminProducts" class="hidden"></section><section id="adminSettings" class="hidden"></section></main></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -589,7 +589,7 @@ async function loadAdminOverview(){
   try{
     const orders=await sb("/rest/v1/orders?select=id,status,grand_total,created_at&order=created_at.desc",{auth:true});
     const active=products.length, pending=(orders||[]).filter(o=>o.status==="new"||o.status==="pending").length, revenue=(orders||[]).filter(o=>o.status!=="cancelled").reduce((s,o)=>s+Number(o.grand_total||0),0);
-    sec.innerHTML=`<div class="admin-grid"><div class="stat"><b>${orders?.length||0}</b><span>Total Orders</span></div><div class="stat"><b>${pending}</b><span>Pending</span></div><div class="stat"><b>${active}</b><span>Products</span></div><div class="stat"><b>${money(revenue)}</b><span>Revenue</span></div></div><div style="margin-top:18px"><button class="btn primary" id="refreshAdmin">تحديث</button><button class="btn ghost" id="logoutAdmin">تسجيل الخروج</button></div>`;
+    document.getElementById("sideOrders").textContent=orders?.length||0;document.getElementById("sideProducts").textContent=active;sec.innerHTML=`<div class="admin-grid"><div class="stat"><b>${orders?.length||0}</b><span>Total Orders</span></div><div class="stat"><b>${pending}</b><span>Pending</span></div><div class="stat"><b>${active}</b><span>Products</span></div><div class="stat"><b>${money(revenue)}</b><span>Revenue</span></div></div><div style="margin-top:18px"><button class="btn primary" id="refreshAdmin">تحديث</button><button class="btn ghost" id="logoutAdmin">تسجيل الخروج</button></div>`;
     document.getElementById("refreshAdmin").onclick=loadAdminOverview;document.getElementById("logoutAdmin").onclick=()=>{accessToken="";sessionStorage.removeItem("rymouche_access_token");document.getElementById("adminLogin").classList.remove("hidden");document.getElementById("adminPanel").classList.add("hidden")};
   }catch(e){sec.innerHTML='<div class="empty"><strong>تعذر تحميل لوحة الإدارة</strong><span>تحققي من RLS وصلاحيات حساب Admin.</span></div>'}
 }
@@ -686,7 +686,7 @@ document.addEventListener("click",e=>{
   const close=e.target.closest("[data-close]");if(close){closeAll();return}
   if(e.target.closest("[data-admin-tab]")){document.querySelectorAll("[data-admin-tab]").forEach(b=>b.classList.remove("active"));e.target.closest("[data-admin-tab]").classList.add("active");showAdminTab(e.target.closest("[data-admin-tab]").dataset.adminTab);return}
 });
-document.getElementById("cartBtn").onclick=openCart;document.getElementById("bottomCart").onclick=openCart;
+document.getElementById("adminQuickRefresh").onclick=loadAdminOverview;document.getElementById("cartBtn").onclick=openCart;document.getElementById("bottomCart").onclick=openCart;
 document.getElementById("overlay").onclick=closeAll;
 document.getElementById("searchBtn").onclick=openSearch;document.getElementById("closeSearch").onclick=()=>document.getElementById("searchPanel").classList.remove("open");
 document.getElementById("searchInput").oninput=e=>doSearch(e.target.value);
