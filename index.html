@@ -25,7 +25,7 @@ header{height:68px;background:#fff;border-bottom:1px solid #eee;display:flex;ali
 .detail{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:28px;margin-top:15px}.detail-img{background:var(--ps);border-radius:18px;min-height:420px;display:grid;place-items:center}.detail-info h2{margin:0}.detail-price{font-size:24px;font-weight:900;margin:12px 0}.desc{color:#777;line-height:1.8}.ot{font-weight:800;font-size:14px;margin:16px 0 8px}.sizes{display:flex;flex-wrap:wrap;gap:7px}.size{border:1px solid #ddd;background:#fff;border-radius:10px;padding:8px 13px}.size.sel{border-color:var(--pd);background:var(--ps);color:var(--pd)}.colors{display:flex;gap:10px}.color{width:30px;height:30px;border-radius:50%;border:3px solid #fff;outline:1px solid #ddd}.color.sel{outline:2px solid var(--pd);outline-offset:2px}.primary{width:100%;border:0;background:var(--pd);color:#fff;border-radius:13px;padding:14px;font-weight:800}.secondary{border:1px solid #ddd;background:#fff;border-radius:13px;padding:13px}.detail-actions{display:flex;gap:8px;margin-top:18px}.detail-actions>*{flex:1}
 .form{display:grid;gap:10px;margin-top:16px}.form input,.form select,.form textarea,.admin-form input,.admin-form select,.admin-form textarea{border:1px solid #ddd;border-radius:11px;padding:11px;outline:none;width:100%;background:#fff}.form textarea{min-height:80px}.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .cart-list{overflow:auto;flex:1;margin:15px 0}.cart-item{display:flex;gap:9px;padding:12px 0;border-bottom:1px solid #eee}.mini{width:65px;height:78px;border-radius:11px;background:var(--ps);display:grid;place-items:center}.cart-info{flex:1}.qty{display:flex;gap:7px;align-items:center;margin-top:8px}.qty button{width:25px;height:25px;border:1px solid #ddd;background:#fff;border-radius:50%}.remove{border:0;background:none;color:#999}.total{border-top:1px solid #eee;padding-top:14px}.total-row{display:flex;justify-content:space-between;font-weight:900;font-size:18px;margin-bottom:12px}
-.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#222;color:#fff;padding:12px 18px;border-radius:12px;z-index:200;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast{position:fixed;bottom:90px;left:50%;transform:translate(-50%,20px);opacity:0;background:#222;color:#fff;padding:14px 20px;border-radius:14px;z-index:400;transition:.2s;font-size:15px;font-weight:700;max-width:90vw;text-align:center;box-shadow:0 8px 24px #0004}.toast.show{opacity:1;transform:translate(-50%,0)}
 /* Shopping enhancements */
 .floating-cart{position:fixed;right:18px;bottom:22px;z-index:85;border:0;background:#d85f87;color:#fff;border-radius:20px;min-width:82px;height:76px;padding:8px 11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;box-shadow:0 10px 30px #d85f8750;font-weight:800}.fc-icon{font-size:24px;line-height:1}.fc-label{font-size:11px}.fc-badge{position:absolute;right:-5px;top:-5px;min-width:24px;height:24px;padding:0 6px;border-radius:20px;background:#222;color:#fff;display:grid;place-items:center;font-size:11px;border:2px solid #fff}.fc-total{font-size:9px;opacity:.95;max-width:78px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.image-lightbox{position:fixed;inset:0;background:#000c;z-index:300;display:none;align-items:center;justify-content:center;padding:20px}.image-lightbox.show{display:flex}.image-lightbox img{max-width:94vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:16px;background:#fff}.lightbox-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#222;font-size:28px;z-index:2}.detail-img{cursor:zoom-in}.detail-img img{cursor:zoom-in}@media(min-width:801px){.detail-img{min-height:420px}}
 /* Admin */
@@ -377,6 +377,12 @@ body::after{
  </div>
  <button class="primary">تأكيد الطلب</button>
 </form></div>
+<div class="modal" id="orderSuccessModal" style="max-width:420px;text-align:center;padding:28px 22px">
+  <div style="font-size:52px;line-height:1;margin-bottom:10px">✓</div>
+  <h2 style="margin:0 0 8px;color:#d85f87">تم إرسال طلبك بنجاح</h2>
+  <p style="color:#666;line-height:1.8;margin:0 0 18px">شكرًا لتسوقك من FERIEL WEAR 🎀<br>سنتواصل معك قريبًا لتأكيد الطلب وشحنه عبر <b>48h Express</b>.</p>
+  <button class="primary" type="button" onclick="closePanels()">العودة للمتجر</button>
+</div>
 <div class="modal" id="sizeModal" style="max-width:560px"><div class="modal-head"><strong>دليل المقاسات</strong><button class="close" onclick="closePanels()">×</button></div><table class="admin-table"><tr><th>المقاس</th><th>الصدر</th><th>الخصر</th><th>الورك</th></tr><tr><td>XS</td><td>80-84</td><td>60-64</td><td>86-90</td></tr><tr><td>S</td><td>84-88</td><td>64-68</td><td>90-94</td></tr><tr><td>M</td><td>88-94</td><td>68-74</td><td>94-100</td></tr><tr><td>L</td><td>94-100</td><td>74-80</td><td>100-106</td></tr><tr><td>XL</td><td>100-108</td><td>80-88</td><td>106-114</td></tr><tr><td>XXL</td><td>108-116</td><td>88-96</td><td>114-122</td></tr></table></div>
 
 <!-- Admin Room -->
@@ -547,7 +553,7 @@ function updateDeliveryFee(){
   if(elGrand) elGrand.textContent=money(sub+(w?fee:0));
 }
 function money(n){return new Intl.NumberFormat("fr-DZ").format(n)+" DA"}
-function toast(s){let t=document.getElementById("toast");t.textContent=s;t.classList.add("show");clearTimeout(window.toastT);window.toastT=setTimeout(()=>t.classList.remove("show"),2300)}
+function toast(s,ms){let t=document.getElementById("toast");t.textContent=s;t.classList.add("show");clearTimeout(window.toastT);window.toastT=setTimeout(()=>t.classList.remove("show"),ms||3200)}
 function saveLocal(){localStorage.setItem("fw_favorites",JSON.stringify(favorites));localStorage.setItem("fw_cart",JSON.stringify(cart));updateBadges()}
 function updateBadges(){const count=cart.reduce((a,x)=>a+x.qty,0);const total=cart.reduce((s,x)=>{let p=products.find(z=>String(z.id)===String(x.id));return s+(p?p.price*x.qty:0)},0);document.getElementById("favBadge").textContent=favorites.length;document.getElementById("cartBadge").textContent=count;const fb=document.getElementById("floatingCartBadge"),ft=document.getElementById("floatingCartTotal");if(fb)fb.textContent=count;if(ft)ft.textContent=money(total)}
 function placeholder(){return '<div class="placeholder"></div>'}
@@ -591,16 +597,61 @@ function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<1)cart.splice(i,1);saveLoc
 function removeCart(i){cart.splice(i,1);saveLocal();renderCart()}
 function openCheckout(){if(!cart.length)return toast("السلة فارغة");closePanels();let p=products.find(x=>String(x.id)===String(cart[0].id));document.getElementById("orderSize").innerHTML='<option value="">المقاس</option>'+(p?.sizes||[]).map(s=>`<option>${escapeHtml(s)}</option>`).join("");document.getElementById("orderColor").value=cart[0].color||"";openModal("checkoutModal");updateDeliveryFee()}
 async function submitOrder(e){
- e.preventDefault();if(!sb)return toast("أضيفي بيانات Supabase أولًا");
- let f=Object.fromEntries(new FormData(e.target).entries()),items=cart.map(x=>{let p=products.find(z=>String(z.id)===String(x.id));return {product_id:x.id,name:p?.name||"",price:p?.price||0,size:x.size,color:x.color,quantity:x.qty}});
- let subtotal=items.reduce((s,x)=>s+x.price*x.quantity,0);
- let delivery_fee=getDeliveryFee();
- let delivery_type=f.delivery_type||'home';
- let total=subtotal+delivery_fee;
- const deliveryLabel=delivery_type==='office'?'مكتب':'منزل';
- const notesWithDelivery=((f.notes||'').trim()?(f.notes.trim()+' | '):'')+`التوصيل عبر 48h Express — ${deliveryLabel} (${delivery_fee} DA)`;
- const {error}=await sb.from("orders").insert({customer_name:f.customer_name,phone:f.phone,wilaya:f.wilaya,commune:f.commune,address:f.address,size:f.size,color:f.color,quantity:Number(f.quantity),notes:notesWithDelivery,items,total,status:"جديدة"});
- if(error){console.error(error);toast("تعذر إرسال الطلب: "+error.message)}else{cart=[];saveLocal();e.target.reset();closePanels();toast("تم استلام طلبك بنجاح ✓")}
+ e.preventDefault();
+ if(!sb)return toast("أضيفي بيانات Supabase أولًا");
+ if(!cart.length)return toast("السلة فارغة");
+
+ const form=e.target;
+ const btn=form.querySelector("button.primary,button[type=submit]");
+ const oldBtnText=btn?btn.textContent:"";
+ if(btn){btn.disabled=true;btn.textContent="جاري إرسال الطلب..."}
+
+ try{
+   let f=Object.fromEntries(new FormData(form).entries());
+   let items=cart.map(x=>{let p=products.find(z=>String(z.id)===String(x.id));return {product_id:x.id,name:p?.name||"",price:p?.price||0,size:x.size,color:x.color,quantity:x.qty}});
+   let subtotal=items.reduce((s,x)=>s+x.price*x.quantity,0);
+   let delivery_fee=getDeliveryFee();
+   let delivery_type=f.delivery_type||"home";
+   let total=subtotal+delivery_fee;
+   const deliveryLabel=delivery_type==="office"?"مكتب":"منزل";
+   const notesWithDelivery=((f.notes||"").trim()?(f.notes.trim()+" | "):"")+`التوصيل عبر 48h Express — ${deliveryLabel} (${delivery_fee} DA)`;
+
+   const {error}=await sb.from("orders").insert({
+     customer_name:f.customer_name,
+     phone:f.phone,
+     wilaya:f.wilaya,
+     commune:f.commune,
+     address:f.address,
+     size:f.size,
+     color:f.color,
+     quantity:Number(f.quantity),
+     notes:notesWithDelivery,
+     items,
+     total,
+     status:"جديدة"
+   });
+
+   if(error){
+     console.error(error);
+     toast("تعذر إرسال الطلب: "+error.message,4500);
+     return;
+   }
+
+   cart=[];
+   saveLocal();
+   form.reset();
+   // إغلاق كل النوافذ ثم إظهار تأكيد واضح
+   document.getElementById("overlay").classList.remove("show");
+   document.querySelectorAll(".modal").forEach(x=>x.classList.remove("show"));
+   document.getElementById("cartDrawer").classList.remove("show");
+   openModal("orderSuccessModal");
+   toast("تم إرسال طلبك بنجاح ✓",4000);
+ }catch(err){
+   console.error(err);
+   toast("حدث خطأ أثناء إرسال الطلب",4000);
+ }finally{
+   if(btn){btn.disabled=false;btn.textContent=oldBtnText||"تأكيد الطلب"}
+ }
 }
 function openSizeGuide(){document.querySelectorAll(".modal").forEach(x=>x.classList.remove("show"));openModal("sizeModal")}
 function openModal(id){document.getElementById(id).classList.add("show");document.getElementById("overlay").classList.add("show")}
